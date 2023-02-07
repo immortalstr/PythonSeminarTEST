@@ -7,7 +7,9 @@ for i in range(len(text)):
         d[text[i]] = 1
         result += f'{text[i]} '
     else:
+        result += f'{text[i]}_{d[text[i]]} '
         d[text[i]] += 1
-        result += f'{text[i]}_{d[text[i]] - 1} '
+       
 
 print(result)
+print(d)
