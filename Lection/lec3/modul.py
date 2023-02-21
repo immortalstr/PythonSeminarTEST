@@ -3,4 +3,3 @@ def max1(a, b):
         return a
     return b
 
-print(max1(1,9))
