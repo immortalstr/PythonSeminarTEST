@@ -8,3 +8,26 @@
 # в порядке
 # Ввод: Вывод:
 # пара-ра-рам рам-пам-папам па-ра-па-дам Парам пам-пам
+
+def count_syllables(word):
+    vowels = "аеёиоуыэюя"
+    count = 0
+    for letter in word:
+        if letter.lower() in vowels:
+            count += 1
+    return count
+
+def check_rhythm(poem):
+    lines = poem.split()
+    syllables = []
+    for line in lines:
+        words = line.split('-')
+        line_syllables = sum([count_syllables(word) for word in words])
+        syllables.append(line_syllables)
+    if len(set(syllables)) == 1:
+        print("Парам пам-пам")
+    else:
+        print("Пам парам")
+
+poem = input("Введите песенку: ")
+check_rhythm(poem)
